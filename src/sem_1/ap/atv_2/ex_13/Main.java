@@ -28,30 +28,24 @@ public class Main {
 
         double result;
 
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
+        if (operator == '+') {
+            result = num1 + num2;
+            System.out.printf("Resultado: %.2f%n", result);
+        } else if (operator == '-') {
+            result = num1 - num2;
+            System.out.printf("Resultado: %.2f%n", result);
+        } else if (operator == '*') {
+            result = num1 * num2;
+            System.out.printf("Resultado: %.2f%n", result);
+        } else if (operator == '/') {
+            if (num2 > 0) {
+                result = num1 / num2;
                 System.out.printf("Resultado: %.2f%n", result);
-                break;
-            case '-':
-                result = num1 - num2;
-                System.out.printf("Resultado: %.2f%n", result);
-                break;
-            case '*':
-                result = num1 * num2;
-                System.out.printf("Resultado: %.2f%n", result);
-                break;
-            case '/':
-                if (num2 > 0) {
-                    result = num1 / num2;
-                    System.out.printf("Resultado: %.2f%n", result);
-                } else {
-                    System.out.println("Impossível dividir‼");
-                }
-                break;
-            default:
-                System.out.println("Sinal Inválido");
-                break;
+            } else {
+                System.out.println("Impossível dividir‼");
+            }
+        } else {
+            System.out.println("Sinal inválido");
         }
 
         sc.close();

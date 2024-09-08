@@ -1,0 +1,33 @@
+package sem_1.ap.atv_4.ex_2;
+
+/* Faça um algoritmo que leia 10 números inteiros e diga:
+    - Quantos são pares;
+    - E quantos são ímpares. */
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int count = 1;
+        int even = 0;
+        int odd = 0;
+
+        while (count <= 10) {
+            System.out.print("Digite o " + count + "º número: ");
+            int number = sc.nextInt();
+
+            if (number % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+
+            count++;
+        }
+
+        System.out.println("O total de número pares é: " + even);
+        System.out.println("O total de número ímpares é: " + odd);
+    }
+}

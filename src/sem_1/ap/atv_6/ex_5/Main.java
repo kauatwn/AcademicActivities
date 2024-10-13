@@ -9,24 +9,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] a = new int[5];
-        int[] b = new int[a.length];
-        int[] c = new int[a.length];
+        int[] arrayA = new int[5];
+        int[] arrayB = new int[arrayA.length];
+        int[] arrayC = new int[arrayA.length];
 
         System.out.println("Digite 5 números inteiros para o vetor A:");
-        for (int i = 0; i < a.length; i++) {
-            a[i] = sc.nextInt();
+        for (int i = 0; i < arrayA.length; i++) {
+            arrayA[i] = sc.nextInt();
         }
 
         System.out.println("\nDigite 5 números inteiros para o vetor B:");
-        for (int i = 0; i < b.length; i++) {
-            b[i] = sc.nextInt();
-            c[i] = a[i] - b[i];
+        for (int i = 0; i < arrayB.length; i++) {
+            arrayB[i] = sc.nextInt();
+            arrayC[i] = arrayA[i] - arrayB[i];
         }
         sc.close();
 
-        System.out.println("\nVetor A: " + Arrays.toString(a));
-        System.out.println("Vetor B: " + Arrays.toString(b));
-        System.out.println("Vetor C: " + Arrays.toString(c));
+        System.out.println("\nVetor A: " + Arrays.toString(arrayA));
+        System.out.println("Vetor B: " + Arrays.toString(arrayB));
+        System.out.println("Vetor C: " + Arrays.toString(arrayC));
     }
 }

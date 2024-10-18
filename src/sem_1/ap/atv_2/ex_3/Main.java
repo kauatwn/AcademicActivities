@@ -1,7 +1,7 @@
 package sem_1.ap.atv_2.ex_3;
 
 /* Ler dois valores inteiros:
-    - E se forem iguais, mostrar “Números iguais”;
+    - E se forem iguais, mostrar "Números iguais";
     - Caso contrário, apresentar a diferença do maior pelo menor. */
 
 import java.util.Scanner;
@@ -32,7 +32,7 @@ public class Main {
             }
 
             int difference = maxValue - minValue;
-            System.out.println("Diferença: " + difference);
+            System.out.printf("Diferença: %d", difference);
         }
 
         sc.close();

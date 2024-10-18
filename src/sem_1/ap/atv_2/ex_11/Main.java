@@ -6,8 +6,8 @@ package sem_1.ap.atv_2.ex_11;
     |------------|-----------------|
     | infantilA  | 5 - 7 anos      |
     | infantilB  | 8 - 10 anos     |
-    | juvenilA   | 11-13 anos      |
-    | juvenilB   | 14-17 anos      |
+    | juvenilA   | 11 - 13 anos    |
+    | juvenilB   | 14 - 17 anos    |
     | Sênior     | 18 anos ou mais | */
 
 import java.util.Scanner;

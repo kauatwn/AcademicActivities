@@ -1,13 +1,19 @@
 package sem_1.ap.atv_7.ex_5;
 
-/* Escreva o método exibirDiaSemana:
+/* Escreva o método exibirDiaSemana().
     - Deve receber um número inteiro no intervalo de 1 - 7 como parâmetro.
     - Deve retornar uma String com o dia da semana correspondente aquele número.
 
 Caso seja passado um número fora do intervalo de 1-7:
     - Retorne uma String com a mensagem: "Dia da semana inválido".
 
-Obs.: Uutilize o switch case dentro do seu método. */
+Exemplo:
+
+    - 1 = domingo
+    - 2 = segunda
+    - 3 = terça
+
+Obs.: Utilize o switch case dentro do seu método. */
 
 public class Main {
     public static void main(String[] args) {

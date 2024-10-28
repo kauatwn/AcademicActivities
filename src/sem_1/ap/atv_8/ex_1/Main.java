@@ -6,17 +6,18 @@ package sem_1.ap.atv_8.ex_1;
 
 public class Main {
     public static void main(String[] args) {
-        Carro honda = new Carro("Honda", "Civic", 200, "Preto");
-        Carro ferrari = new Carro("Ferrari", "488 GTB", 330, "Vermelho");
+        Carro carro1 = new Carro();
 
-        System.out.println(honda.getMarca());
-        System.out.println(honda.getModelo());
-        System.out.println(honda.getVelocidadeMaxima());
-        System.out.println(honda.getCor());
+        carro1.marca = "Honda";
+        carro1.modelo = "Civic";
+        carro1.velocidadeMaxima = 200;
+        carro1.cor = "Preto";
 
-        System.out.println(ferrari.getMarca());
-        System.out.println(ferrari.getModelo());
-        System.out.println(ferrari.getVelocidadeMaxima());
-        System.out.println(ferrari.getCor());
+        Carro carro2 = new Carro();
+
+        carro2.marca = "Ferrari";
+        carro2.modelo = "488 GTB";
+        carro2.velocidadeMaxima = 330;
+        carro2.cor = "Vermelho";
     }
 }

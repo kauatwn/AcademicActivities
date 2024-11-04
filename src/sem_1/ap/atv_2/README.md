@@ -25,6 +25,8 @@ Nesta pasta, contém uma série de exercícios acadêmicos desenvolvidos para pr
 - **Condicional Composta:** Envolve uma condição e um bloco de código a ser executado caso a condição seja verdadeira, e um bloco alternativo a ser executado caso seja falsa. Utilizada para situações onde são necessárias duas alternativas de fluxo. Exemplo:
 
     ```java
+    import java.util.Scanner;
+    
     public class ParImpar {
         public static void main(String[] args) {
             Scanner entrada = new Scanner(System.in);

@@ -10,30 +10,27 @@ Obs.: O resultado deve ser True ou False */
 
 public class Main {
     public static void main(String[] args) {
-        if (120 - 30 == 3 * 30){
+        if (120 - 30 == 3 * 30) {
             System.out.println(true);
         } else {
             System.out.println(false);
         }
 
-        if (!(20 % 4 == 1) || 9 != 9){
+        if (!(20 % 4 == 1) || 9 != 9) {
             System.out.println(true);
-        }
-        else {
+        } else {
             System.out.println(false);
         }
 
-        if (5 % (2 / 2) > 3){
+        if (5 % (2 / 2) > 3) {
             System.out.println(true);
-        }
-        else {
+        } else {
             System.out.println(false);
         }
 
-        if ("a" == "A"){
+        if ("a" == "A") {
             System.out.println(true);
-        }
-        else {
+        } else {
             System.out.println(false);
         }
     }

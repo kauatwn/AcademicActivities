@@ -15,7 +15,7 @@ public class Main {
         int odd = 0;
 
         while (count <= 10) {
-            System.out.print("Digite o " + count + "º número: ");
+            System.out.printf("Digite o %dº número: ", count);
             int number = sc.nextInt();
 
             if (number % 2 == 0) {
@@ -26,6 +26,8 @@ public class Main {
 
             count++;
         }
+
+        sc.close();
 
         System.out.println("O total de número pares é: " + even);
         System.out.println("O total de número ímpares é: " + odd);

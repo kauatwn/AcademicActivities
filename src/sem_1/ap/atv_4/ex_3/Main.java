@@ -11,18 +11,19 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Digite um número inteiro: ");
-        int number = sc.nextInt();
+        int maxLimit = sc.nextInt();
+        sc.close();
 
-        int sequenceValue = 1;
+        int currentSequenceValue = 1;
 
-        while (sequenceValue <= number) {
-            if (sequenceValue * 2 > number) {
-                System.out.print(sequenceValue + ".");
+        while (currentSequenceValue <= maxLimit) {
+            if (currentSequenceValue * 2 > maxLimit) {
+                System.out.print(currentSequenceValue + ".");
             } else {
-                System.out.print(sequenceValue + ", ");
+                System.out.print(currentSequenceValue + ", ");
             }
 
-            sequenceValue *= 2;
+            currentSequenceValue *= 2;
         }
     }
 }

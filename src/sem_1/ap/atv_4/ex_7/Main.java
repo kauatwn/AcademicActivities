@@ -7,12 +7,15 @@ obesidade.
 
 IMC = peso / altura² */
 
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        final String UNDERWEIGHT = "abaixo do peso";
+        final String OBESITY = "com obesidade";
+        final String HEALTHY = "saudável";
 
         int count = 1;
         int accumulator = 0;
@@ -25,21 +28,25 @@ public class Main {
             double height = sc.nextDouble();
 
             double bmi = weight / (height * height);
-            String result = String.format("A %dª pessoa está com IMC em %.2f e está ", count, bmi);
 
+            String healthStatus;
             if (bmi < 18.5) {
-                result += "abaixo do peso.";
+                healthStatus = UNDERWEIGHT;
             } else if (bmi > 24.9) {
-                result += "com obesidade.";
+                healthStatus = OBESITY;
             } else {
-                result += "saudável.";
+                healthStatus = HEALTHY;
                 accumulator++;
             }
 
+            String result = String.format("A %dª pessoa está com IMC em %.2f e está %s.", count, bmi, healthStatus);
             System.out.println(result);
+
             count++;
             System.out.println();
         }
+
+        sc.close();
 
         System.out.println("Número de pessoas saudáveis com IMC entre 18,5 e 24,9: " + accumulator);
     }

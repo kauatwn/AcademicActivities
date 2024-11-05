@@ -10,19 +10,19 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int count = 1;
-        int smallestNumber = 0;
 
-        System.out.print("Digite o " + count + "º número inteiro e positivo: ");
-        int firstNumber = sc.nextInt();
+        System.out.printf("Digite o %dº número inteiro e positivo: ", count);
+        int smallestNumber = sc.nextInt();
 
-        while (firstNumber <= 0) {
+        while (smallestNumber <= 0) {
             System.out.print("Número inválido. Por favor, digite um número positivo: ");
-            firstNumber = sc.nextInt();
+            smallestNumber = sc.nextInt();
         }
 
         count++;
+
         while (count <= 10) {
-            System.out.print("Digite o " + count + "º número inteiro e positivo: ");
+            System.out.printf("Digite o %dº número inteiro e positivo: ", count);
             int nextNumber = sc.nextInt();
 
             while (nextNumber <= 0) {
@@ -30,12 +30,14 @@ public class Main {
                 nextNumber = sc.nextInt();
             }
 
-            if (nextNumber < firstNumber) {
+            if (nextNumber < smallestNumber) {
                 smallestNumber = nextNumber;
             }
 
             count++;
         }
+
+        sc.close();
 
         System.out.println("O menor número digitado é: " + smallestNumber);
     }

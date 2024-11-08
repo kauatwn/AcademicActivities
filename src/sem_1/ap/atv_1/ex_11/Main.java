@@ -19,11 +19,10 @@ public class Main {
         int currentYear = sc.nextInt();
 
         int currentAge = currentYear - yearOfBirth;
-
         int ageIn2030 = 2030 - yearOfBirth;
 
         System.out.println("A idade dessa pessoa é: " + currentAge);
-        System.out.println("Em 2030, essa pessoa terá " + ageIn2030 + " anos");
+        System.out.printf("Em 2030, essa pessoa terá %d anos", ageIn2030);
         sc.close();
     }
 }

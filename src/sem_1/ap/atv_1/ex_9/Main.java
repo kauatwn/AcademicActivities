@@ -8,6 +8,6 @@ public class Main {
         double side = 350.0;
 
         double area = side * side;
-        System.out.print("A área de um quadrado de " + side + "m é: " + area + "m²");
+        System.out.printf("A área de um quadrado de %.0fm é: %.0fm²", side, area);
     }
 }

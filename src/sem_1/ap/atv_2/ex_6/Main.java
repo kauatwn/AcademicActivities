@@ -27,7 +27,7 @@ public class Main {
             System.out.println("Por favor, digite um genêro válido");
         }
 
-        System.out.printf("O peso ideal é: %.2f kg\n", idealWeight);
+        System.out.printf("O peso ideal é: %.2f kg%n", idealWeight);
         sc.close();
     }
 }

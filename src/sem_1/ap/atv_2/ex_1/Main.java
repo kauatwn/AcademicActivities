@@ -14,7 +14,7 @@ public class Main {
 
         if (number > 20) {
             double half = (double) number / 2;
-            System.out.printf("A metade de " + number + " é " + half);
+            System.out.printf("A metade de %d é %.1f", number, half);
         }
 
         sc.close();

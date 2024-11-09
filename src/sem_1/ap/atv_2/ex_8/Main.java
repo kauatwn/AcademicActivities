@@ -13,12 +13,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String correctPassword = "R10p5";
+        final String CORRECT_PASSWORD = "R10p5";
 
         System.out.print("Digite a senha: ");
         String inputPassword = sc.nextLine();
 
-        if (inputPassword.equals(correctPassword)) {
+        if (inputPassword.equals(CORRECT_PASSWORD)) {
             System.out.println("Acesso concedido");
         } else {
             System.out.println("Acesso negado");

@@ -24,7 +24,7 @@ public class Main {
             bonus = salary * ((double) 10 / 100);
         }
 
-        System.out.printf("O valor do bônus é: R$ %.2f\n", bonus);
+        System.out.printf("O valor do bônus é: R$ %.2f%n", bonus);
         sc.close();
     }
 }

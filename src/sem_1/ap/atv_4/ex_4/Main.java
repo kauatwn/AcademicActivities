@@ -12,7 +12,7 @@ public class Main {
         do {
             double half = (double) number / 2;
 
-            System.out.println("A metade de " + number + " é " + half);
+            System.out.printf("A metade de %d é %.1f%n", number, half);
             number++;
         } while (number <= 20);
     }

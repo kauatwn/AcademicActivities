@@ -31,7 +31,7 @@ public class Main {
         switch (choice) {
             case 'M':
                 result = (num1 + num2) / 2;
-                System.out.printf("A média entre os números é: " + result);
+                System.out.println("A média entre os números é: " + result);
                 break;
             case 'S':
                 if (num1 > num2) {

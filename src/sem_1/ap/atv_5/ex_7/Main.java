@@ -42,6 +42,8 @@ public class Main {
             System.out.println();
         }
 
+        sc.close();
+
         double averageHeightBetween10And20;
         if (countHeightBetween10And20 > 0) {
             averageHeightBetween10And20 = totalHeightBetween10And20 / countHeightBetween10And20;
@@ -52,7 +54,8 @@ public class Main {
         double percentageWeightBelow40 = (countWeightBelow40 * 100.0) / 10;
 
         System.out.printf("Quantidade de pessoas com mais de 50 anos: %d%n", countOver50);
-        System.out.printf("Média de altura das pessoas com idade entre 10 e 20 anos: %.2fm%n", averageHeightBetween10And20);
+        System.out.printf("Média de altura das pessoas com idade entre 10 e 20 anos: %.2fm%n",
+                averageHeightBetween10And20);
         System.out.printf("Porcentagem de pessoas com peso inferior a 40 quilos: %.2f%%%n", percentageWeightBelow40);
     }
 }

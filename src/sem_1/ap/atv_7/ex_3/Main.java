@@ -17,6 +17,7 @@ public class Main {
 
         System.out.print("Digite o segundo número: ");
         int num2 = sc.nextInt();
+        sc.close();
 
         System.out.println("O maior número é: " + encontrarMax(num1, num2));
     }

@@ -10,7 +10,7 @@ public class Main {
         while (multiplier <= 10) {
             int result = number * multiplier;
 
-            System.out.println(number + " x " + multiplier + " = " + result);
+            System.out.printf("%d x %d = %d%n", number, multiplier, result);
             multiplier++;
         }
     }

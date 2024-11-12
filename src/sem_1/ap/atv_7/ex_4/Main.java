@@ -17,6 +17,8 @@ public class Main {
         System.out.print("Digite um número: ");
         int num = sc.nextInt();
 
+        sc.close();
+
         if (isPar(num)) {
             System.out.println("Número par");
         } else {

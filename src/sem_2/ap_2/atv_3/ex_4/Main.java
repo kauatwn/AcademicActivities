@@ -45,6 +45,10 @@ public class Main {
             }
 
             while (left <= right) { // O(log m)
+                // // Chance de overflow
+                // int middle = (left + right) / 2;
+
+                // Evita overflow
                 int middle = left + (right - left) / 2;
 
                 if (matrix[row][middle] == target) {

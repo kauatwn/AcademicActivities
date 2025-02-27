@@ -14,11 +14,11 @@ public class Main {
 
         // Busca linear -> O(n)
         long start = System.currentTimeMillis();
-        int foundPosition = findPosition(array, value);
+        int linearSearchPosition = linearSearch(array, value);
         long end = System.currentTimeMillis();
         long elapsedTime = end - start;
 
-        System.out.printf("Valor %d encontrado na posição %d%n", value, foundPosition);
+        System.out.printf("Valor %d encontrado na posição %d%n", value, linearSearchPosition);
         System.out.printf("Tempo de execução: %dms%n", elapsedTime);
 
         System.out.println();
@@ -39,19 +39,20 @@ public class Main {
         }
     }
 
-    private static int findPosition(int[] array, int target) {
+    private static int linearSearch(int[] array, int target) {
         int position = -1;
         int count = 0;
+        final String MESSAGE = "Repetições na Busca Linear: %d%n";
 
         for (int i = 0; i < array.length; i++) {
             count++;
             if (array[i] == target) {
-                System.out.printf("Repetições na Busca Linear: %d%n", count);
+                System.out.printf(MESSAGE, count);
                 return i;
             }
         }
 
-        System.out.printf("Repetições na Busca Linear: %d%n", count);
+        System.out.printf(MESSAGE, count);
         return position;
     }
 
@@ -59,6 +60,7 @@ public class Main {
         int left = 0;
         int right = array.length - 1;
         int count = 0;
+        final String MESSAGE = "Repetições na Busca Binária: %d%n";
 
         while (left <= right) {
             count++;
@@ -69,7 +71,7 @@ public class Main {
             int middle = left + (right - left) / 2;
 
             if (array[middle] == target) {
-                System.out.printf("Repetições na Busca Binária: %d%n", count);
+                System.out.printf(MESSAGE, count);
                 return middle;
             } else if (array[middle] < target) {
                 left = middle + 1;
@@ -78,7 +80,7 @@ public class Main {
             }
         }
 
-        System.out.printf("Repetições na Busca Binária: %d%n", count);
+        System.out.printf(MESSAGE, count);
         return -1;
     }
 }

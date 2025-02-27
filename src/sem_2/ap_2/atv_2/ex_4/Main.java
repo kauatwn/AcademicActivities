@@ -18,28 +18,25 @@ public class Main {
 
         int[] coordinates = findValue(array, value);
 
-        if (coordinates != null) {
+        if (coordinates[0] == -1) {
+            System.out.printf("Valor %d não encontrado.", value);
+        } else {
             System.out.printf("Valor %d encontrado.%n", value);
             System.out.printf("Coordenadas: [%d, %d]", coordinates[0], coordinates[1]);
-        } else {
-            System.out.printf("Valor %d não encontrado.", value);
         }
     }
 
     private static int[] findValue(int[][] array, int value) {
-        int[] coordinates = new int[2];
+        int[] coordinates = {-1, -1};
 
         for (int row = 0; row < array.length; row++) {
             for (int column = 0; column < array[row].length; column++) {
                 if (array[row][column] == value) {
-                    coordinates[0] = row;
-                    coordinates[1] = column;
-
-                    return coordinates;
+                    return new int[]{row, column};
                 }
             }
         }
 
-        return null;
+        return coordinates;
     }
 }

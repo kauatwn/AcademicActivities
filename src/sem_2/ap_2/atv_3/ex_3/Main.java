@@ -23,8 +23,12 @@ public class Main {
         long end = System.currentTimeMillis();
         long elapsedTime = end - start;
 
-        System.out.printf("Valor '%s' encontrado na posição %d%n", value, binarySearchPosition);
-        System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        if (binarySearchPosition == -1) {
+            System.out.println("Valor não encontrado");
+        } else {
+            System.out.printf("Valor '%s' encontrado na posição %d%n", value, binarySearchPosition);
+            System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        }
     }
 
     private static int binarySearch(String[] array, String target) {
@@ -41,7 +45,9 @@ public class Main {
 
             if (comparisonResult == 0) {
                 return middle;
-            } else if (comparisonResult < 0) {
+            }
+
+            if (comparisonResult < 0) {
                 left = middle + 1;
             } else {
                 right = middle - 1;

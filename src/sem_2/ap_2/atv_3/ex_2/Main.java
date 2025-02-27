@@ -29,8 +29,12 @@ public class Main {
         end = System.currentTimeMillis();
         elapsedTime = end - start;
 
-        System.out.printf("Valor %d encontrado na posição %d%n", value, binarySearchPosition);
-        System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        if (binarySearchPosition == -1) {
+            System.out.println("Valor não encontrado");
+        } else {
+            System.out.printf("Valor %d encontrado na posição %d%n", value, binarySearchPosition);
+            System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        }
     }
 
     private static void fillArray(int[] array) {

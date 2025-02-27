@@ -18,8 +18,12 @@ public class Main {
         long end = System.currentTimeMillis();
         long elapsedTime = end - start;
 
-        System.out.printf("Valor %d encontrado na posição %d%n", value, foundPosition);
-        System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        if (foundPosition == -1) {
+            System.out.println("Valor não encontrado");
+        } else {
+            System.out.printf("Valor %d encontrado na posição %d%n", value, foundPosition);
+            System.out.printf("Tempo de execução: %dms%n", elapsedTime);
+        }
     }
 
     private static void fillArray(int[] array) {

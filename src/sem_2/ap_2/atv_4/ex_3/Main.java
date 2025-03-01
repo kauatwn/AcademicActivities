@@ -9,7 +9,7 @@ public class Main {
         Random random = new Random();
 
         int[][] matrix = new int[5][5];
-        fillArray(matrix);
+        fillMatrix(matrix);
 
         int value = random.nextInt(100);
         int[] coordinates = findValue(matrix, value);
@@ -25,7 +25,7 @@ public class Main {
         printMatrix(matrix);
     }
 
-    private static void fillArray(int[][] matrix) { // O(n^2) - Quadrática
+    private static void fillMatrix(int[][] matrix) { // O(n^2) - Quadrática
         Random random = new Random();
 
         for (int i = 0; i < matrix.length; i++) { // O(n)

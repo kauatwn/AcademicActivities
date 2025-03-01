@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println("Números maiores que 50:");
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] > 50) {
                     System.out.printf("Posição [%d][%d]: %.2f%n", i, j, matrix[i][j]);
                 }
@@ -23,7 +23,7 @@ public class Main {
         Random random = new Random();
 
         for (int i = 0; i < matrix.length; i++) { // O(n) - Linear
-            for (int j = 0; j < matrix.length; j++) { // O(n) - Linear
+            for (int j = 0; j < matrix[i].length; j++) { // O(n) - Linear
                 matrix[i][j] = (random.nextDouble() * 200) - 100; // Randomiza valores entre -100 e 100
             }
         }

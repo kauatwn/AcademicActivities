@@ -10,6 +10,8 @@ Este exercício consiste em criar e manipular um vetor tridimensional de inteiro
 
 ## Exemplo de saída esperada
 
+A saída do programa será um array tridimensional exibido de forma organizada. Como os valores são gerados aleatoriamente, a saída pode variar a cada execução. Abaixo está um exemplo de como a saída pode ser exibida:
+
 ```plaintext
 [
   [

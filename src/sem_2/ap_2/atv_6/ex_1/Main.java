@@ -28,11 +28,11 @@ public class Main {
         System.out.println("Matriz gerada:");
         printMatrix(matrix);
 
-        sortColumn(matrix, 0);
-        sortColumn(matrix, matrix[0].length - 1);
+        insertionSortColumn(matrix, 0);
+        insertionSortColumn(matrix, matrix[0].length - 1);
 
         System.out.println("Primeira e última coluna ordenadas:");
-        printMatrix(matrix);
+        printMatrix(matrix, true);
 
         sc.close();
     }
@@ -47,12 +47,25 @@ public class Main {
         }
     }
 
-    private static void printMatrix(int[][] matrix) { // O(n^2) - Quadrática
+    private static void printMatrix(int[][] matrix) {
+        printMatrix(matrix, false);
+    }
+
+    private static void printMatrix(int[][] matrix, boolean highlightColumn) { // O(n^2) - Quadrática
+        final String RED = "\u001B[31m";
+        final String RESET = "\u001B[0m";
+
         System.out.println("[");
         for (int i = 0; i < matrix.length; i++) {
             System.out.print("  [");
             for (int j = 0; j < matrix[i].length; j++) {
-                System.out.printf("%02d", matrix[i][j]);
+                final String element = String.format("%02d", matrix[i][j]);
+
+                if (highlightColumn && (j == 0 || j == matrix[i].length - 1)) {
+                    System.out.printf("%s%s%s", RED, element, RESET);
+                } else {
+                    System.out.print(element);
+                }
 
                 if (j < matrix[i].length - 1) {
                     System.out.print(", ");
@@ -68,8 +81,8 @@ public class Main {
         System.out.printf("]%n%n");
     }
 
-    // Insertion Sort
-    private static void sortColumn(int[][] matrix, int columnIndex) { // O(n^2) - Quadrática
+    // Algoritmo Insertion Sort adaptado para ordenar uma coluna de uma matriz
+    private static void insertionSortColumn(int[][] matrix, int columnIndex) { // O(n^2) - Quadrática
         for (int i = 1; i < matrix.length; i++) {
             int current = matrix[i][columnIndex];
             int previousIndex = i - 1;

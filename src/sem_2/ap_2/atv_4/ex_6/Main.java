@@ -30,11 +30,18 @@ public class Main {
     }
 
     private static void printMatrix(int[][] matrix) {
+        final String RED = "\u001B[31m";
+        final String RESET = "\u001B[0m";
+
         System.out.println("[");
         for (int x = 0; x < matrix.length; x++) {
             System.out.print("  [");
             for (int y = 0; y < matrix[x].length; y++) {
-                System.out.printf("%02d", matrix[x][y]);
+                if (matrix[x][y] == -1) {
+                    System.out.printf("%s%-2d%s", RED, matrix[x][y], RESET);
+                } else {
+                    System.out.printf("%02d", matrix[x][y]);
+                }
 
                 if (y < matrix[x].length - 1) {
                     System.out.print(", ");
@@ -47,6 +54,6 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.print("]");
+        System.out.printf("]%n%n");
     }
 }

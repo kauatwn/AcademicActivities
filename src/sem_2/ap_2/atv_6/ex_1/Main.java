@@ -28,8 +28,10 @@ public class Main {
         System.out.println("Matriz gerada:");
         printMatrix(matrix);
 
-        insertionSortColumn(matrix, 0);
-        insertionSortColumn(matrix, matrix[0].length - 1);
+        // insertionSortColumn(matrix, 0);
+        // insertionSortColumn(matrix, matrix[0].length - 1);
+        sortColumn(matrix, 0);
+        sortColumn(matrix, matrix[0].length - 1);
 
         System.out.println("Primeira e última coluna ordenadas:");
         printMatrix(matrix, true);
@@ -81,22 +83,58 @@ public class Main {
         System.out.printf("]%n%n");
     }
 
-    // Algoritmo Insertion Sort adaptado para ordenar uma coluna de uma matriz
-    private static void insertionSortColumn(int[][] matrix, int columnIndex) { // O(n^2) - Quadrática
-        for (int i = 1; i < matrix.length; i++) {
-            int current = matrix[i][columnIndex];
-            int previousIndex = i - 1;
+    // // Algoritmo Insertion Sort adaptado para ordenar uma coluna de uma matriz
+    // private static void insertionSortColumn(int[][] matrix, int columnIndex) { //
+    // O(n^2) - Quadrática
+    // for (int i = 1; i < matrix.length; i++) {
+    // int current = matrix[i][columnIndex];
+    // int previousIndex = i - 1;
 
-            while (previousIndex >= 0 && matrix[previousIndex][columnIndex] > current) {
-                shiftDown(matrix, columnIndex, previousIndex);
-                previousIndex--;
-            }
+    // while (previousIndex >= 0 && matrix[previousIndex][columnIndex] > current) {
+    // shiftDown(matrix, columnIndex, previousIndex);
+    // previousIndex--;
+    // }
 
-            matrix[previousIndex + 1][columnIndex] = current;
+    // matrix[previousIndex + 1][columnIndex] = current;
+    // }
+    // }
+
+    // private static void shiftDown(int[][] matrix, int columnIndex, int
+    // previousIndex) {
+    // matrix[previousIndex + 1][columnIndex] = matrix[previousIndex][columnIndex];
+    // }
+
+    // Forma mais mais simples de entender - extrai, ordena e insere
+    private static void sortColumn(int[][] matrix, int columnIndex) {
+        int[] column = new int[matrix.length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            column[i] = matrix[i][columnIndex];
+        }
+
+        insertionSort(column);
+
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][columnIndex] = column[i];
         }
     }
 
-    private static void shiftDown(int[][] matrix, int columnIndex, int previousIndex) {
-        matrix[previousIndex + 1][columnIndex] = matrix[previousIndex][columnIndex];
+    // Algoritmo Insertion Sort tradicional
+    private static void insertionSort(int[] array) { // O(n^2) - Quadrática
+        for (int i = 1; i < array.length; i++) {
+            int currentValue = array[i];
+            int previousIndex = i - 1;
+
+            while (previousIndex >= 0 && array[previousIndex] > currentValue) {
+                shiftRight(array, previousIndex);
+                previousIndex--;
+            }
+
+            array[previousIndex + 1] = currentValue;
+        }
+    }
+
+    private static void shiftRight(int[] array, int previousIndex) {
+        array[previousIndex + 1] = array[previousIndex];
     }
 }

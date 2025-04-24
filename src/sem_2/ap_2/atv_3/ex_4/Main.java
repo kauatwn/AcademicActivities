@@ -1,7 +1,7 @@
 package sem_2.ap_2.atv_3.ex_4;
 
 // Crie um método para realizar a busca binária em um array bidimensional, em que todas as linhas estão ordenadas em
-// ordem crescente, e último item de uma linha é menor que o primeiro item próxima linha.
+// ordem crescente, e o último item de uma linha é menor que o primeiro item da próxima linha.
 public class Main {
     public static void main(String[] args) {
         int[][] array = new int[10][10];
@@ -38,7 +38,8 @@ public class Main {
             int right = matrix[row].length - 1;
 
             // Se a condição for verdadeira, o valor não está presente na linha.
-            // Portanto, passa para a próxima linha (próxima iteração), sem executar o while.
+            // Portanto, passa para a próxima linha (próxima iteração), sem executar o
+            // while.
             // Melhora a performance do algoritmo.
             if (matrix[row][right] < target) {
                 continue;

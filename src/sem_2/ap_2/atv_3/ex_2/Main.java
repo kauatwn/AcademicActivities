@@ -10,7 +10,7 @@ public class Main {
         fillArray(array);
 
         Random random = new Random();
-        int value = random.nextInt(0, 100_000);
+        int value = random.nextInt(0, array.length);
 
         // Busca linear -> O(n)
         long start = System.currentTimeMillis();

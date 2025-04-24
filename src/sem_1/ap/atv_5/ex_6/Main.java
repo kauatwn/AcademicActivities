@@ -28,7 +28,7 @@ public class Main {
 
         for (int i = 1; i <= totalVotes; i++) {
             System.out.println("URNA ELETRÔNICA");
-            System.out.println("Para votar, digite o número apresentado para escolher uma opção e pressione ENTER:\n");
+            System.out.println("Para votar, digite o número apresentado para escolher uma opção e pressione ENTER:%n");
             System.out.println("CANDIDATOS:");
             System.out.println("""
                     [1] - Candidato 1
@@ -46,9 +46,9 @@ public class Main {
             String voteCounted;
 
             if (i == totalVotes) {
-                voteCounted = "VOTO COMPUTADO! Votação encerrada.\n";
+                voteCounted = "VOTO COMPUTADO! Votação encerrada.%n";
             } else {
-                voteCounted = "VOTO COMPUTADO! Vote novamente.\n";
+                voteCounted = "VOTO COMPUTADO! Vote novamente.%n";
             }
 
             switch (option) {
@@ -81,10 +81,11 @@ public class Main {
                     i--;
             }
         }
+
         double nullPercent = ((double) nullVotes / totalVotes) * 100;
         double blankPercent = ((double) blankVotes / totalVotes) * 100;
 
-        System.out.println("\nRESULTADO DA ELEIÇÃO\n");
+        System.out.println("%nRESULTADO DA ELEIÇÃO%n");
         System.out.printf("Candidato 1: %d votos%n", candidate1Votes);
         System.out.printf("Candidato 2: %d votos%n", candidate2Votes);
         System.out.printf("Candidato 3: %d votos%n", candidate3Votes);

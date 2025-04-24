@@ -1,5 +1,6 @@
 package sem_2.ap_2.atv_4.ex_2;
 
+import java.util.Arrays;
 import java.util.Random;
 
 // Use o método anterior para preencher um array com valores não repetidos.
@@ -10,12 +11,11 @@ public class Main {
         // Complexidade O(n^2) - Quadrática
         fillArray(array);
 
-        // Complexidade O(n) - Linear
-        printArray(array);
+        System.out.println(Arrays.toString(array));
     }
 
-    private static boolean hasValue(int[] array, int value) {
-        for (int element : array) { // O(n)
+    private static boolean hasValue(int[] array, int value) { // O(n) - Linear
+        for (int element : array) {
             if (element == value) {
                 return true;
             }
@@ -24,30 +24,17 @@ public class Main {
         return false;
     }
 
-    private static void fillArray(int[] array) {
+    private static void fillArray(int[] array) { // O(n^2) - Quadrática
         Random random = new Random();
 
-        for (int i = 0; i < array.length; i++) { // O(n)
+        for (int i = 0; i < array.length; i++) {
             int value = random.nextInt(100);
 
-            if (!hasValue(array, value)) { // O(n)
+            if (!hasValue(array, value)) {
                 array[i] = value;
             } else {
                 i--;
             }
         }
-    }
-
-    private static void printArray(int[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length; i++) { // O(n)
-            System.out.printf("%d", array[i]);
-
-            if (i < array.length - 1) {
-                System.out.print(", ");
-            }
-        }
-
-        System.out.println("]");
     }
 }

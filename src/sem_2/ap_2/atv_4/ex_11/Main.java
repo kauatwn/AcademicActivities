@@ -2,7 +2,7 @@ package sem_2.ap_2.atv_4.ex_11;
 
 import java.util.Random;
 
-// Crie um array bidimensional de 7x7 e exiba a soma dos valores das colunas í­mpares e a multiplicação dos valores das
+// Crie um array bidimensional de 7x7 e exiba a soma dos valores das colunas ímpares e a multiplicação dos valores das
 // linhas pares deste array.
 
 // Obs.:

@@ -10,9 +10,10 @@ public class Main {
 
         // Complexidade O(n) - Linear
         fillArray(array);
+        System.out.println(Arrays.toString(array));
 
         // Complexidade O(n^2) - Quadrática
-        array = replaceRepeatedValues(array);
+        replaceRepeatedValues(array);
 
         System.out.println(Arrays.toString(array));
     }
@@ -25,7 +26,7 @@ public class Main {
         }
     }
 
-    private static int[] replaceRepeatedValues(int[] array) { // O(n^2)
+    private static void replaceRepeatedValues(int[] array) { // O(n^2)
         for (int i = 0; i < array.length; i++) { // O(n)
             for (int j = i + 1; j < array.length; j++) { // O(n)
                 if (array[i] == array[j] && array[i] != 0) {
@@ -33,7 +34,5 @@ public class Main {
                 }
             }
         }
-
-        return array;
     }
 }

@@ -8,17 +8,17 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         int[] array1 = new int[10];
-        int[] array2 = new int[20];
+        int[] array2 = new int[array1.length * 2];
 
         fillArray(array1);
 
         for (int i = 0; i < array1.length; i++) {
             array2[i] = array1[i];
-            array2[i + 10] = array1[i] * 2;
+            array2[i + array1.length] = array1[i] * 2;
         }
 
-        System.out.println("Array 1: " + Arrays.toString(array1));
-        System.out.println("Array 2: " + Arrays.toString(array2));
+        System.out.printf("Array 1: %s%n", Arrays.toString(array1));
+        System.out.printf("Array 2: %s%n", Arrays.toString(array2));
     }
 
     private static void fillArray(int[] array) {

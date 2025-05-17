@@ -9,12 +9,16 @@ public class MyQueue {
     private int capacity;
 
     public MyQueue(int capacity) {
+        if (capacity < 0) {
+            throw new IllegalArgumentException("Capacity cannot be negative");
+        }
+
         this.capacity = capacity;
     }
 
     public void setCapacity(int capacity) {
-        if (this.capacity > capacity) {
-            throw new IllegalArgumentException("New capacity must be greater than current size");
+        if (capacity < size()) {
+            throw new IllegalArgumentException("New capacity cannot be less than current queue size");
         }
 
         this.capacity = capacity;

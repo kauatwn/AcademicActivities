@@ -23,18 +23,13 @@ public class HtmlStructureValidator {
         this.tagParser = tagParser;
     }
 
-    public boolean isValidHtml(String filePath) {
+    public boolean isValidHtml(String filePath) throws IOException {
         if (!fileValidator.isValid(filePath)) {
             return false;
         }
 
-        try {
-            String content = fileReader.readContent(filePath);
-            return validateHtmlStructure(content);
-        } catch (IOException e) {
-            System.err.println("Erro na leitura: " + e.getMessage());
-            return false;
-        }
+        String content = fileReader.readContent(filePath);
+        return validateHtmlStructure(content);
     }
 
     private boolean validateHtmlStructure(String content) {

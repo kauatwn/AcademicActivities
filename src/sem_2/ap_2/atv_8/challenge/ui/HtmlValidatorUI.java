@@ -8,6 +8,7 @@ import sem_2.ap_2.atv_8.challenge.utils.HtmlTagExtractor;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 
 public class HtmlValidatorUI {
     public void show() {
@@ -29,14 +30,18 @@ public class HtmlValidatorUI {
                 new HtmlTagExtractor(),
                 new HtmlTagParser());
 
-        boolean isValid = validator.isValidHtml(filePath);
-
-        if (isValid) {
-            JOptionPane.showMessageDialog(null, "HTML válido!", "Resultado",
-                    JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "HTML inválido!", "Resultado",
-                    JOptionPane.ERROR_MESSAGE);
+        try {
+            boolean isValid = validator.isValidHtml(filePath);
+            if (isValid) {
+                JOptionPane.showMessageDialog(null, "HTML válido!", "Resultado",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "HTML inválido!", "Resultado",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo: " + e.getMessage(),
+                    "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

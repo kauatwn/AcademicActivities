@@ -1,6 +1,5 @@
 package sem_2.ap_2.atv_8.challenge.ui;
 
-
 import sem_2.ap_2.atv_8.challenge.core.HtmlFileValidator;
 import sem_2.ap_2.atv_8.challenge.core.HtmlStructureValidator;
 import sem_2.ap_2.atv_8.challenge.core.HtmlTagParser;
